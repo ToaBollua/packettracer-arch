@@ -1,0 +1,26 @@
+post_install() {
+  echo ">>> Cisco Packet Tracer requires a Netacad Username/Password to download."
+  echo ">>> Please ensure you have downloaded the appropriate .deb file"
+  echo ">>> and placed it in the same directory as the PKGBUILD before building."
+  echo ">>> Note: This software is bound by Cisco's EULA."
+
+  if type update-desktop-database > /dev/null 2>&1; then
+    update-desktop-database -q
+  fi
+
+  if type gtk-update-icon-cache > /dev/null 2>&1; then
+    gtk-update-icon-cache -f -q /usr/share/icons/hicolor
+  fi
+
+  if type update-mime-database > /dev/null 2>&1; then
+    update-mime-database /usr/share/mime
+  fi
+}
+
+post_upgrade() {
+  post_install
+}
+
+post_remove() {
+  post_install
+}
