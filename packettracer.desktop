@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Cisco Packet Tracer
 Comment=Network design and emulation software for Cisco's Networking Academy instructors and students
-Exec=packettracer
+Exec=packettracer %f
 Icon=packettracer
 Terminal=false
 Type=Application
